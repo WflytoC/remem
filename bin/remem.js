@@ -4,8 +4,12 @@ var program = require('commander');
 var sqlite3 = require('sqlite3').verbose();
 var colors = require('colors');
 
+var urlStr = process.argv[1];
+var reg = /remem/;
+var result = urlStr.replace(reg,'');
 //create a database named rainboat
-var db = new sqlite3.Database('love');
+var db = new sqlite3.Database(result +'love');
+
 db.serialize(function(){
 	db.run('CREATE TABLE IF NOT EXISTS  category (name Text)');
 	db.run('CREATE TABLE IF NOT EXISTS item (content Text,name Text)');

@@ -1,6 +1,6 @@
 {
   "name": "remem",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This is the node package that helps you record some commands of Shell!",
   "main": "index.js",
   "scripts": {
