@@ -33,9 +33,11 @@ This is the node package that helps you record some commands of Shell!
 
 ###Example
 
-![one](https://github.com/WflytoC/remem/tree/master/images/one.png)
+* ![one](https://github.com/WflytoC/remem/raw/master/images/one.png)
+* ![two](https://github.com/WflytoC/remem/raw/master/images/two.png)
 
-![two](https://github.com/WflytoC/remem/tree/master/images/two.png)
+
+
 
 
 If you run across some issues ,please contanct me! I'm pretty  happy that you can improve this package.
