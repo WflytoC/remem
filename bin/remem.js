@@ -1,11 +1,11 @@
+#!/usr/bin/env node
 
-//require the relevant third modules
 var program = require('commander');
 var sqlite3 = require('sqlite3').verbose();
 var colors = require('colors');
 
 //create a database named rainboat
-var db = new sqlite3.Database('windows');
+var db = new sqlite3.Database('love');
 db.serialize(function(){
 	db.run('CREATE TABLE IF NOT EXISTS  category (name Text)');
 	db.run('CREATE TABLE IF NOT EXISTS item (content Text,name Text)');
@@ -16,7 +16,6 @@ function queryCategoryTable(){
 
 	db.serialize(function(){
 	//query the categories
-	console.log(colors.blue('Index    Category'));
 	db.each("SELECT rowid AS id,name FROM category",function(err,row){
 		console.log(colors.green(row.id+'         '+row.name));
 		});
@@ -31,11 +30,8 @@ function queryItemTable(){
 	//query the items
 	db.each("SELECT rowid AS id,name FROM category",function(err,row){
 		var name = row.name
-		console.log(colors.yellow('  %s  '),name);
-		console.log('');
-		console.log(colors.blue('Index'+'     '+'Command'));
-		db.each('SELECT rowid AS id,content FROM item',function(err,row){
-			console.log(colors.cyan(' '+row.id + '        '+row.content));
+		db.each('SELECT rowid AS id,content FROM item where name = ?',name,function(err,row){
+			console.log(colors.cyan(' '+row.id +' '+name + '        '+row.content+'  '));
 		});
 	});
 
