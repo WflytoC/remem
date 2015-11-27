@@ -1,0 +1,30 @@
+{
+  "name": "remem",
+  "version": "1.0.0",
+  "description": "This is the node package that helps you record some commands of Shell!",
+  "main": "index.js",
+  "scripts": {
+    "test": "try remem"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/WflytoC/remem.git"
+  },
+  "keywords": [
+    "commands",
+    "record",
+    "use"
+  ],
+   "dependencies":{
+    "commander":"~2.9.0",
+    "sqlite3":"~3.1.1",
+    "colors":"~1.1.2"
+    },
+  "bin": { "remem": "bin/remem.js" },
+  "author": "wflytoc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WflytoC/remem/issues"
+  },
+  "homepage": "https://github.com/WflytoC/remem#readme"
+}
